@@ -19,7 +19,7 @@
                     <div class="card-body">
                         <form action="{{ route('brands.update', $brands->id) }}" method="POST">
                             @csrf
-                            @method('PUT')
+                            @method('PATCH')
                             <div class="form-group
                             mb-3 pt-3">
                                 <label for="name">Brand Name</label>

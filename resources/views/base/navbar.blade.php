@@ -15,7 +15,7 @@
                             <div class="navbar-nav">
                                 <a class="nav-link" href="{{ route('categories.index') }}">Category</a>
                                 <a class="nav-link" href="{{route('brands.index')}}">Brand</a>
-                                <a class="nav-link" href="#">Product</a>
+                                <a class="nav-link" href="{{ route('products.index')}} ">Product</a>
                                 <a class="nav-link" href="#">Sales</a>
                             </div>
                             <div class="ms-auto">

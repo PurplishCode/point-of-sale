@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::resource('categories', 'App\Http\Controllers\CategoryController');
 Route::resource('brands', 'App\Http\Controllers\BrandController');
+Route::resource('products', 'App\Http\Controllers\ProductController');

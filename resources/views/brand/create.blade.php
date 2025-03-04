@@ -27,6 +27,7 @@
                                 <div class="pt-3">
                                     <label for="status">Status</label>
                                     <select name="status" id="" class="form-control">
+                                        <option value="" hidden>Select Default value</option>
                                         <option value="1">Active</option>
                                         <option value="0">Inactive</option>
                                     </select>

@@ -35,7 +35,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'brandname' => 'required|string',
+             'brandname' => 'required|string',
             'status' => 'required|boolean'
         ]);
 

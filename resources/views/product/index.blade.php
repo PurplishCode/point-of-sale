@@ -21,39 +21,34 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Category</h4>
+                            <h4>Products</h4>
                         </div>
                         <div class="card-body">
-                            <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Add Category</a>
+                            <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add Product</a>
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Category Name</th>
-                                        <th>Status</th>
+                                        <th>Product Name</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($categories as $category)
+                                    @foreach ($products as $product)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $category->catname }}</td>
+                                            <td>{{ $product->productName }}</td>
                                             <td>
-                                                @if ($category->status == 1)
-                                                    <span class="badge bg-success">Active</span>
-                                                @else
-                                                    <span class="badge bg-danger">Inactive</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('categories.edit', $category->id) }}"
+                                                <a href="{{ route('products.edit', $product->id) }}"
                                                     class="btn btn-warning btn-sm">Edit</a>
                                                 <button class="btn btn-danger btn-sm d-inline" data-bs-target="#staticmodal"
                                                     data-bs-toggle="modal">Delete</button>
                                             </td>
+                                        <tr>
                                         </tr>
 
+
+{{--
         <div class="modal" id="staticmodal" tabindex="-1" aria-labelledby="staticmodalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -63,7 +58,7 @@
                     </div>
                     <div class="modal-body">
                         <p>Are you sure you want to delete this category?</p>
-                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-inline" onsubmit="preventDefault();">
+                        <form action="{{ route('categories.destroy', $categories->id) }}" method="POST" class="d-inline" onsubmit="preventDefault();">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-md">Yes</button>
@@ -72,7 +67,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
                                     @endforeach
                                 </tbody>
                             </table>
