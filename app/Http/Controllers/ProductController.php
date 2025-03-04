@@ -55,32 +55,47 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $product = $this->product->find($id);
+        $categories = Category::pluck('catname','id');
+        $brands = Brand::pluck('brandname','id');
+        return view('product.edit', compact('product','categories','brands'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'productName' => 'required|string',
+            'category_id' => 'required|integer',
+            'brand_id' => 'required|integer',
+            'price' => 'required|numeric',
+        ]);
+        $product = $this->product->find($id);
+        $product->update($request->all());
+        toast('Product updated successfully', 'success');
+        return redirect()->route('products.index')->with('success', 'Product updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = $this->product->find($id);
+        $product->delete();
+        toast()->success('Product deleted successfully');
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully');
     }
 }

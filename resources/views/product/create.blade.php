@@ -13,7 +13,7 @@
                         <!-- Product Name -->
                         <div class="mb-3">
                             <label for="name" class="fw-bold">📌 Product Name</label>
-                            <input type="text" name="productname" class="form-control shadow-sm border-primary" id="catname" placeholder="Enter product name" required>
+                            <input type="text" name="productName" class="form-control shadow-sm border-primary" id="productName" placeholder="Enter product name" required>
                         </div>
                         <div class="mb-3">
                             <label for="name" class="fw-bold">Price</label>

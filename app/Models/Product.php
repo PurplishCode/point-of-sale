@@ -13,7 +13,7 @@ class Product extends Model
     protected $table = 'products';
     protected $primaryKey = 'id';
 
-    protected $fillable = ['productname', 'price', 'category_id', 'brand_id', 'status'];
+    protected $fillable = ['productName', 'price', 'category_id', 'brand_id', 'status'];
 
     public function category(): BelongsTo
     {
