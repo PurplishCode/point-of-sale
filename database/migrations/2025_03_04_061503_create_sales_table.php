@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
+            $table->double('price');
+            $table->integer('balance');
+            $table->double('total');
             $table->timestamps();
         });
     }
